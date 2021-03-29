@@ -12,6 +12,20 @@ function    triangle(num, mode){
             console.log(str);
         }
     }
+    else if(mode == "right" && num < 0){
+        var val = num * (-1);
+        var triangle = "";
+        for (var i = 0; i < val; i++) {
+            for(var j = 0; j< i; j++){
+              triangle += " ";
+            }
+            for(var k = 0; k< val-i; k++){
+              triangle += "#"
+            }
+            triangle +="\n";
+        }
+        console.log(triangle.slice(0, triangle.length-1));
+    }
     else if(mode == "left" && num > 0){
         let str = ""; 
         for(var i = 0; i < num; i++){
@@ -21,7 +35,6 @@ function    triangle(num, mode){
     }
     else if(mode == "left" && num < 0){
         let newNum = Math.abs(num);
-        // let array = [];
         let str = "#".repeat(newNum);
         let array = str.split("");
         for(let i = 0; i < newNum; i++){
@@ -29,6 +42,35 @@ function    triangle(num, mode){
             array.pop();
         }   
     }
+    else if(mode == "isoscoles" && num > 0){
+        for( i = 0; i < num; i++)
+        {
+            str = '';
+            for(j = 1; j < (num - i); j++)
+            {
+                 str += ' ';
+            }
+            for( k = 0; k < (2 * i + 1); k++)
+            {
+                str += "#";
+            }
+            console.log(str);
+        }
+    }
+    else{
+        var val = num * (-1);
+        var triangle = "";
+        for (var i = val; i > 0 ; i--) { 
+            for (var j = 0; j < val-i; j++) { 
+                triangle = triangle + " "; 
+            }
+            for (var k = 0; k < (2*i-1); k++) { 
+                triangle = triangle + "#"; 
+            }
+            triangle += "\n";
+        }
+        console.log(triangle.slice(0, triangle.length-1));
+    }
 }
 
-triangle(10, "right");
+triangle(-5, "right");
