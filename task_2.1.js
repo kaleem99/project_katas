@@ -1,7 +1,9 @@
 function    square(num, symbol){
-    let str = symbol;
-    for(let i = 0; i < num; i++){
-        console.log(str.repeat(num))
+    if(typeof(num) === "number"){
+        let str = symbol;
+        for(let i = 0; i < num; i++){
+            console.log(str.repeat(num))
+        }
     }
 }
 
