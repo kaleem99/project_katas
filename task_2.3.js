@@ -31,3 +31,4 @@ function columns(arr) {
 }
 
 columns(["Write","good","code", "every","day"]);
+
