@@ -1,4 +1,4 @@
-function    triangle(num, mode){
+function    triangle(num, mode = "left"){
     if(typeof(num) === "number"){
         if(mode == "right" && num > 0){
             for (var i = 0; i < num; i++) {
@@ -43,7 +43,7 @@ function    triangle(num, mode){
                 array.pop();
             }   
         }
-        else if(mode == "isoscoles" && num > 0){
+        else if(mode == "isosceles" && num > 0){
             for( i = 0; i < num; i++)
             {
                 str = '';
@@ -75,4 +75,4 @@ function    triangle(num, mode){
     }
 }
 
-triangle("-5", "right");
+triangle(-5,);

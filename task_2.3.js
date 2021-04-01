@@ -1,8 +1,14 @@
 function columns(arr) {
     let res = "";
     let newArr = [...arr];
-    let largest = newArr.sort((a, b) => (b.length - a.length))[0].length;
-    let difference = Math.abs(arr.length - largest);
+    let largest = newArr.sort((a, b) => (b.length - a.length))[0];
+    console.log(largest.length)
+    for(let k = 0; k < arr.length; k++){
+        if(arr[k].length == largest.length){
+            largest = arr[k]
+        }
+    }
+    let difference = Math.abs(arr.length - largest.length);
     for(let index = 0; index < difference; index++){
         arr.push("");
     }
@@ -19,7 +25,10 @@ function columns(arr) {
         }
         res += "\n";
     }
-    console.log(res.slice(0, res.length-1))
+    let lastIndex = res.lastIndexOf(largest[largest.length-1]);
+    // console.log(largest)
+    console.log(res.slice(0, lastIndex+1));
 }
 
-columns(["Write","good","code","every","day", "long string"]);
+columns(["Write","good","code", "every","day"]);
+
