@@ -2,7 +2,6 @@ function columns(arr) {
     let res = "";
     let newArr = [...arr];
     let largest = newArr.sort((a, b) => (b.length - a.length))[0];
-    console.log(largest.length)
     for(let k = 0; k < arr.length; k++){
         if(arr[k].length == largest.length){
             largest = arr[k]
@@ -26,7 +25,6 @@ function columns(arr) {
         res += "\n";
     }
     let lastIndex = res.lastIndexOf(largest[largest.length-1]);
-    // console.log(largest)
     console.log(res.slice(0, lastIndex+1));
 }
 
