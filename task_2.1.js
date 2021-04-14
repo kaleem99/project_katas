@@ -1,13 +1,8 @@
-function    square(num, symbol=0){
-    let str = "#";
-    if(symbol != false){
-        str = symbol;
+function square(num, charSymbol = "#") {
+  if (typeof num === "number") {
+    for (let i = 0; i < num; i++) {
+      console.log(charSymbol.repeat(num));
     }
-    if(typeof(num) === "number"){
-        for(let i = 0; i < num; i++){
-            console.log(str.repeat(num))
-        }
-    }
+  }
 }
-
-square(8, "*");
+square(3, "*");
